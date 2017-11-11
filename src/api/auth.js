@@ -19,3 +19,16 @@ export function getInfo() {
         method: 'get',
     });
 }
+
+export function register(email, password, username, code) {
+    return fetch({
+        url: '/auth/register',
+        method: 'post',
+        data: {
+            email,
+            password,
+            username,
+            code,
+        },
+    });
+}

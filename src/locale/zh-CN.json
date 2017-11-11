@@ -13,7 +13,9 @@
             "input-username": "请输入你的用户名",
             "input-email": "请输入你的邮箱",
             "input-password": "请输入你的密码",
-            "input-invite": "请输入你的邀请码"
+            "input-invite": "请输入你的邀请码",
+            "register": "注册",
+            "register-success": "注册成功"
         }
     },
     "static": {

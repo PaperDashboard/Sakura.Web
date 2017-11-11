@@ -15,7 +15,7 @@
                         </el-input>
                     </el-form-item>
                     <el-form-item prop="username">
-                        <el-input :placeholder="$t('auth.register.input-password')" v-model="password">
+                        <el-input :placeholder="$t('auth.register.input-password')" type="password" v-model="password">
                             <i slot="prefix" class="mdl-icon-input material-icons el-input__icon">lock</i>
                         </el-input>
                     </el-form-item>
@@ -23,6 +23,11 @@
                         <el-input :placeholder="$t('auth.register.input-invite')" v-model="inviteCode">
                             <i slot="prefix" class="mdl-icon-input material-icons el-input__icon">record_voice_over</i>
                         </el-input>
+                    </el-form-item>
+                    <el-form-item class="center">
+                        <el-button type="primary" :loading="this.loading" @click="registerTo">
+                            {{ $t("auth.login.submit") }}
+                        </el-button>
                     </el-form-item>
                 </el-form>
             </el-card>
@@ -32,6 +37,7 @@
 
 <script>
     import FullScreen from '@/components/FullScreen';
+    import { register as R } from '@/api/auth';
 
     export default {
         data() {
@@ -40,7 +46,29 @@
                 password: '',
                 email: '',
                 inviteCode: '',
+                loading: false,
             };
+        },
+        methods: {
+            registerTo() {
+                this.loginLoading = true;
+                R(this.email, this.password, this.username, this.inviteCode)
+                    .then(() => {
+                        this.loginLoading = false;
+                        this.$notify.info({
+                            title: this.$t('auth.register.register'),
+                            message: this.$t('auth.register.register-success'),
+                        });
+                    }).catch((err) => {
+                        this.loginLoading = false;
+                        this.$notify.error({
+                            title: this.$t('auth.register.register'),
+                            message: err.response && err.response.data.error
+                                ? err.response.data.error
+                                : err.message,
+                        });
+                    });
+            },
         },
         components: {
             FullScreen,

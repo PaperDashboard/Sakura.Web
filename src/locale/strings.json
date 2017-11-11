@@ -13,7 +13,9 @@
             "input-username": "Input your username",
             "input-email": "Input your email here",
             "input-password": "Input your password here",
-            "input-invite": "Input your invite code here"
+            "input-invite": "Input your invite code here",
+            "register": "Register",
+            "register-success": "Register success"
         }
     },
     "static": {
