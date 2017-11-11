@@ -1,12 +1,19 @@
 {
     "auth": {
         "login": {
-            "input-email": "Please input your email here",
-            "input-password": "Please input your password here",
+            "input-email": "Input your email here",
+            "input-password": "Input your password here",
             "title": "Login to Sakura",
             "submit": "Submit",
             "login": "Login",
             "login-success": "Login success"
+        },
+        "register": {
+            "title": "Register to Sakura",
+            "input-username": "Input your username",
+            "input-email": "Input your email here",
+            "input-password": "Input your password here",
+            "input-invite": "Input your invite code here"
         }
     },
     "static": {

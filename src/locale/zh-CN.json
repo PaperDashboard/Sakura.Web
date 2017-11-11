@@ -7,6 +7,13 @@
             "submit": "提交",
             "login": "登陆",
             "login-success": "登陆成功"
+        },
+        "register": {
+            "title": "注册",
+            "input-username": "请输入你的用户名",
+            "input-email": "请输入你的邮箱",
+            "input-password": "请输入你的密码",
+            "input-invite": "请输入你的邀请码"
         }
     },
     "static": {

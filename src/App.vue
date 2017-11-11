@@ -2,9 +2,10 @@
     <div id="app">
         <!-- <Headers></Headers> -->
 
-        <transition name="fade" mode="out-in">
-            <router-view/>
-        </transition>
+        <router-view>
+            <router-view solt="model" name="model">
+            </router-view>
+        </router-view>
         <Footers></Footers>
     </div>
 </template>

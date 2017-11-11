@@ -19,10 +19,10 @@
             </el-menu-item>
         </div>
         <div v-if="!profile._id" class="flex-display">
-            <el-menu-item :index="'2'" class="navbar-item" @click="$router.push('/auth/login')">
+            <el-menu-item :index="'2'" class="navbar-item" @click="$router.push({ name: 'Login' })">
                 {{ $t("static.login") }}
             </el-menu-item>
-            <el-menu-item :index="'3'" class="navbar-item" @click="$router.push('/')">
+            <el-menu-item :index="'3'" class="navbar-item" @click="$router.push({ name: 'Register' })">
                 {{ $t("static.register") }}
             </el-menu-item>
         </div>

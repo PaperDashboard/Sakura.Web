@@ -1,7 +1,7 @@
 <template>
     <div id="footer-bar">
         <div id="item-on-left">
-            <p>{{ $t("static.name") }}</p>
+            <p @click="$router.push({ name: 'Index' })">{{ $t("static.name") }}</p>
         </div>
         <div id="item-on-center">
             <p>Hello, World</p>
@@ -26,7 +26,7 @@
 <style scoped>
     #footer-bar {
         max-width: 100vw;
-        min-height: 50px;
+        min-height: 48px;
         background-color: #e4e4e4;
         color: #777;
         display: flex;
