@@ -1,0 +1,12 @@
+{
+    "auth": {
+        "login": {
+            "input-email": "Please input your email here",
+            "input-password": "Please input your password here",
+            "title": "Login to Sakura",
+            "submit": "Submit",
+            "login": "Login",
+            "login-success": "Login success"
+        }
+    }
+}

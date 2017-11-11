@@ -1,0 +1,12 @@
+{
+    "auth": {
+        "login": {
+            "input-email": "请输入你的邮箱",
+            "input-password": "请输入你的密码",
+            "title": "登陆",
+            "submit": "提交",
+            "login": "登陆",
+            "login-success": "登陆成功"
+        }
+    }
+}
