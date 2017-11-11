@@ -25,6 +25,9 @@
             <el-menu-item :index="'3'" class="navbar-item" @click="$router.push({ name: 'Register' })">
                 {{ $t("static.register") }}
             </el-menu-item>
+            <el-menu-item :index="'4'" class="navbar-item" @click="$router.push({ name: 'Code' })">
+                {{ $t("static.code") }}
+            </el-menu-item>
         </div>
     </div>
 </el-menu>

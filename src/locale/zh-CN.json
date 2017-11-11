@@ -16,11 +16,20 @@
             "input-invite": "请输入你的邀请码",
             "register": "注册",
             "register-success": "注册成功"
+        },
+        "code": {
+            "title": "公共邀请码",
+            "date": "生成时间",
+            "code": "邀请码",
+            "action": "操作",
+            "access": "访问"
         }
     },
     "static": {
         "name": "Sakura",
         "login": "登陆",
-        "register": "注册"
+        "register": "注册",
+        "code": "邀请码",
+        "loading": "加载中"
     }
 }

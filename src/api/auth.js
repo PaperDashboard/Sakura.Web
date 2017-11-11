@@ -32,3 +32,11 @@ export function register(email, password, username, code) {
         },
     });
 }
+
+
+export function codes() {
+    return fetch({
+        url: '/auth/code',
+        method: 'get',
+    });
+}

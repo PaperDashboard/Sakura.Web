@@ -16,11 +16,20 @@
             "input-invite": "Input your invite code here",
             "register": "Register",
             "register-success": "Register success"
+        },
+        "code": {
+            "title": "Public invite code",
+            "date": "Generate Time",
+            "code": "Invite Code",
+            "action": "Action",
+            "access": "Access"
         }
     },
     "static": {
         "name": "Sakura",
         "login": "Login",
-        "register": "Register"
+        "register": "Register",
+        "code": "Invite Code",
+        "loading": "Loading"
     }
 }

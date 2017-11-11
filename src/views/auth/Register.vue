@@ -45,7 +45,7 @@
                 username: '',
                 password: '',
                 email: '',
-                inviteCode: '',
+                inviteCode: this.$route.params.id,
                 loading: false,
             };
         },
@@ -89,5 +89,6 @@
 <style>
     .mdl-icon-input {
         font-size: 16px;
+        padding-top: 2px;
     }
 </style>

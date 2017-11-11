@@ -6,12 +6,12 @@
                 <el-form autoComplete="on" ref="loginForm" label-position="left" label-width="0px" class="card-box">
                     <el-form-item prop="username">
                         <el-input :placeholder="$t('auth.login.input-email')" v-model="email">
-                            <i slot="prefix" class="el-input__icon el-icon-search"></i>
+                            <i slot="prefix" class="mdl-icon-input material-icons el-input__icon">mail</i>
                         </el-input>
                     </el-form-item>
                     <el-form-item prop="password">
                         <el-input :placeholder="$t('auth.login.input-password')" type="password" v-model="password">
-                            <i slot="prefix" class="el-input__icon el-icon-search"></i>
+                            <i slot="prefix" class="mdl-icon-input material-icons el-input__icon">lock</i>
                         </el-input>
                     </el-form-item>
                     <el-form-item class="center">
