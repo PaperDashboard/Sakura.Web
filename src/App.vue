@@ -1,17 +1,21 @@
 <template>
     <div id="app">
         <!-- <Headers></Headers> -->
-        <router-view/>
+
+        <transition name="fade" mode="out-in">
+            <router-view/>
+        </transition>
+        <Footers></Footers>
     </div>
 </template>
 
 <script>
-// import Headers from 'components/common/Headers';
+import Footers from 'components/common/Footers';
 
 export default {
     name: 'app',
     components: {
-        // Headers,
+        Footers,
     },
 };
 </script>

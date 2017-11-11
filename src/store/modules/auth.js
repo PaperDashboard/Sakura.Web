@@ -17,7 +17,7 @@ export default {
             const ret = await l(email, password);
             commit('setToken', ret.data.token);
             const userInfo = await getInfo();
-            commit('setProfile', userInfo);
+            commit('setProfile', userInfo.data);
         },
     },
     mutations: {

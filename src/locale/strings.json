@@ -8,5 +8,10 @@
             "login": "Login",
             "login-success": "Login success"
         }
+    },
+    "static": {
+        "name": "Sakura",
+        "login": "Login",
+        "register": "Register"
     }
 }

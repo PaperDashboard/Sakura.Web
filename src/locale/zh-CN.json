@@ -8,5 +8,10 @@
             "login": "登陆",
             "login-success": "登陆成功"
         }
+    },
+    "static": {
+        "name": "Sakura",
+        "login": "登陆",
+        "register": "注册"
     }
 }
