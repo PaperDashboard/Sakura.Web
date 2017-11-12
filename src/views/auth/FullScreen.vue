@@ -4,8 +4,7 @@
             <el-col :xs="2" :sm="4" :md="4" :lg="6" :xl="6"></el-col>
             <el-col :xs="14" :sm="10" :md="10" :lg="6" :xl="6">
                 <div class="grid-content full-width">
-                    <slot>
-                    </slot>
+                    <router-view></router-view>
                 </div>
             </el-col>
             <el-col :xs="2" :sm="4" :md="4" :lg="6" :xl="6"></el-col>
@@ -15,7 +14,6 @@
 
 <script>
     export default {
-
     };
 </script>
 

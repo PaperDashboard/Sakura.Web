@@ -13,10 +13,14 @@ export default {
     },
     actions: {
         async getInfo({ commit }) {
-            const userInfo = await getInfo();
-            commit('setProfile', userInfo.data);
+            try {
+                const userInfo = await getInfo();
+                commit('setProfile', userInfo.data);
+            } catch (err) {
+                // Ignore error
+            }
         },
-        async login({ commit }, { email, password }) {
+        async login({ dispatch, commit }, { email, password }) {
             const ret = await l(email, password);
             commit('setToken', ret.data.token);
         },

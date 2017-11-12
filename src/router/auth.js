@@ -1,15 +1,21 @@
 import Code from '@/views/auth/Code';
-import Login from '@/views/auth/Login';
-import Register from '@/views/auth/Register';
+import FullScreenAuth from '@/views/auth/FullScreen';
+import Login from '@/components/auth/Login';
+import Register from '@/components/auth/Register';
 
 export default [{
-    path: '/auth/login',
-    name: 'Login',
-    component: Login,
-}, {
-    path: '/auth/register',
-    name: 'Register',
-    component: Register,
+    path: '/auth',
+    name: 'AuthBasic',
+    component: FullScreenAuth,
+    children: [{
+        path: 'login',
+        name: 'Login',
+        component: Login,
+    }, {
+        path: 'register',
+        name: 'Register',
+        component: Register,
+    }],
 }, {
     path: '/auth/code/',
     name: 'Code',
