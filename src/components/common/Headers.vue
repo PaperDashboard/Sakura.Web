@@ -13,7 +13,7 @@
                 </span>
                 <el-dropdown-menu slot="dropdown">
                     <el-dropdown-item>
-                        <span @click="$router.push({ name: 'Dashboard' })">{{ $t('static.dashboard') }}</span>
+                        <span @click="$router.push({ name: 'DashboardIndex' })">{{ $t('static.dashboard') }}</span>
                     </el-dropdown-item>
                     <el-dropdown-item divided>
                         <span @click="promiseLogout">{{ $t('auth.logout.logout') }}</span>

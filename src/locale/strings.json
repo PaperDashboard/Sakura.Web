@@ -53,5 +53,13 @@
         "store": {
             "name": "Store"
         }
+    },
+    "dashboard": {
+        "signup": {
+            "title": "Daily Signup",
+            "line1": "Traffic will not reset, you can sign to earn traffic",
+            "line2": "You can sign pre day",
+            "submit": "Sign"
+        }
     }
 }

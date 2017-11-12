@@ -7,6 +7,7 @@ export default [{
     component: Template,
     children: [{
         path: '',
+        name: 'DashboardIndex',
         component: Index,
     }],
 }];

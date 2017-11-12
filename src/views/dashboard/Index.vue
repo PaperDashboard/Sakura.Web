@@ -5,9 +5,35 @@
             <div slot="header" class="clearfix">
                 <span>{{ $t('sidebar.user.index') }}</span>
             </div>
+            <div id="content-index">
+                <div class="card-index">
+                    <div class="text">
+                        <span>{{ $t('dashboard.signup.title') }}</span>
+                        <p>{{ $t('dashboard.signup.line1') }}</p>
+                        <p>{{ $t('dashboard.signup.line2') }}</p>
+                        <el-button>{{ $t('dashboard.signup.submit') }}</el-button>
+                    </div>
+                </div>
+                <hr>
+                <div id="graph-index" class="card-index">
+                    <div class="text">
+                        <span>流量图表</span>
+                    </div>
+                </div>
+            </div>
         </el-card>
     </div>
 </template>
+
+<script>
+import { mapGetters } from 'vuex';
+
+export default {
+    computed: {
+        ...mapGetters('auth', ['profile']),
+    },
+};
+</script>
 
 
 <style scoped>
@@ -18,5 +44,24 @@
     #wapper {
         padding-right: 4vw;
         padding-top: 4px;
+    }
+    #content-index > hr {
+        color: #e6ebf5;
+        background-color: #e6ebf5;
+        height:1px;
+        border-width:0;
+    }
+    .card-index > .text {
+        line-height: 0.7;
+        color: #777;
+        font-size: 13px;
+    }
+    .card-index > .text > span {
+        color: #555;
+        font-size: 17px;
+        /* line-height: */
+    }
+    #graph-index {
+        padding-top: 0.7em;
     }
 </style>

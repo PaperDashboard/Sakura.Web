@@ -2,11 +2,11 @@
     <div>
         <el-col>
             <h5></h5>
-            <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
+            <el-menu default-active="2">
                 <el-submenu index="1">
                     <template slot="title">
                         <i class="material-icons material-icons-in-menu">account_circle</i>
-                        <span>{{ $t('sidebar.user.name') }}</span>
+                        <span @click="$router.push({ name: 'DashboardIndex' })">{{ $t('sidebar.user.name') }}</span>
                     </template>
                     <el-menu-item index="1-1">
                         <i class="material-icons material-icons-in-menu">home</i>
