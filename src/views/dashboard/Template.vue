@@ -1,7 +1,7 @@
 <template>
     <div>
         <headers></headers>
-        <div id="wapper" clas>
+        <div id="wapper">
             <el-row type="flex" class="row-bg" justify="space-between">
                 <el-col class="hidden-sm-and-down" :span="6">
                     <side-bar>
@@ -30,7 +30,8 @@ export default {
 
 <style scoped>
     #wapper {
-        min-height: calc(100vh - 48px - 60px);
+        min-height: calc(100vh - 48px - 84px);
+        padding-bottom: 12px;
     }
     @media only screen and (max-width:991px) {
         #wapper {

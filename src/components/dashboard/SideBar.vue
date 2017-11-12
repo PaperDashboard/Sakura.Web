@@ -2,7 +2,7 @@
     <div>
         <el-col>
             <h5></h5>
-            <el-menu default-active="2">
+            <el-menu>
                 <el-submenu index="1">
                     <template slot="title">
                         <i class="material-icons material-icons-in-menu">account_circle</i>

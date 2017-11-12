@@ -12,6 +12,8 @@
                 <div id="graph-index" class="card-index">
                     <div class="text">
                         <span>流量图表</span>
+                        <traffic-chart>
+                        </traffic-chart>
                     </div>
                 </div>
             </div>
@@ -21,10 +23,12 @@
 
 <script>
 import Signup from '@/components/dashboard/Signup';
+import TrafficChart from '@/components/dashboard/TrafficChart';
 
 export default {
     components: {
         Signup,
+        TrafficChart,
     },
 };
 </script>
