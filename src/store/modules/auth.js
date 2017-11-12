@@ -1,11 +1,10 @@
-import Cookies from 'js-cookie';
 import { login as l, getInfo, logout as lo } from '@/api/auth';
-import { SAKURA_TOKEN } from '@/utils/user';
+import { destory, set, get as getToken } from '@/storage/user';
 
 export default {
     namespaced: true,
     state: {
-        token: Cookies.get(SAKURA_TOKEN),
+        token: getToken(),
         profile: {},
     },
     getters: {
@@ -13,11 +12,13 @@ export default {
         profile: state => state.profile,
     },
     actions: {
+        async getInfo({ commit }) {
+            const userInfo = await getInfo();
+            commit('setProfile', userInfo.data);
+        },
         async login({ commit }, { email, password }) {
             const ret = await l(email, password);
             commit('setToken', ret.data.token);
-            const userInfo = await getInfo();
-            commit('setProfile', userInfo.data);
         },
         async logout({ commit }) {
             await lo();
@@ -31,7 +32,7 @@ export default {
             Object.assign(state, playload);
         },
         setToken(state, token) {
-            Cookies.set(SAKURA_TOKEN, token);
+            set(token);
             // eslint-disable-next-line
             state.token = token;
         },
@@ -40,7 +41,7 @@ export default {
             state.profile = profile;
         },
         logout() {
-            Cookies.remove(SAKURA_TOKEN);
+            destory();
         },
     },
 };

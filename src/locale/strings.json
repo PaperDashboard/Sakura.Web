@@ -34,6 +34,12 @@
         "register": "Register",
         "code": "Invite Code",
         "loading": "Loading",
-        "dashboard": "Dashboard"
+        "dashboard": "Dashboard",
+        "index": "Index"
+    },
+    "error": {
+        "404": {
+            "desc": "Pelease check your address, Click this button to return to home page"
+        }
     }
 }

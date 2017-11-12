@@ -1,8 +1,7 @@
 import axios from 'axios';
-import Cookies from 'js-cookie';
-import { SAKURA_TOKEN } from '@/utils/user';
+import { isLogin } from '@/utils/user';
+import { get as getToken } from '@/storage/user';
 // import { Message, MessageBox } from 'element-ui';
-import store from '../store';
 
 const service = axios.create({
     baseURL: process.env.BASE_API,
@@ -10,9 +9,9 @@ const service = axios.create({
 });
 
 service.interceptors.request.use((config) => {
-    if (store.getters['auth/token'] !== undefined) {
+    if (isLogin()) {
         /* eslint-disable no-param-reassign */
-        config.headers['X-User-Token'] = Cookies.get(SAKURA_TOKEN);
+        config.headers['X-User-Token'] = getToken();
     }
     return config;
 }, (error) => {

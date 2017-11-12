@@ -12,7 +12,7 @@
                     <i class="el-icon-arrow-down el-icon--right"></i>
                 </span>
                 <el-dropdown-menu slot="dropdown">
-                    <el-dropdown-item>{{ $t('static.dashboard') }}</el-dropdown-item>
+                    <el-dropdown-item><span>{{ $t('static.dashboard') }}</span></el-dropdown-item>
                     <el-dropdown-item divided>
                         <span @click="promiseLogout">{{ $t('auth.logout.logout') }}</span>
                     </el-dropdown-item>
