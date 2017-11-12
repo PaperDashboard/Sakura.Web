@@ -51,7 +51,7 @@
                     });
                     setTimeout(() => {
                         this.$router.push('/');
-                    }, 1000);
+                    }, 2000);
                 }).catch((err) => {
                     this.loginLoading = false;
                     this.$notify.error({
@@ -78,5 +78,12 @@
     }
     .center {
         text-align: center;
+    }
+</style>
+
+<style>
+    .mdl-icon-input {
+        font-size: 16px;
+        padding-top: 2px;
     }
 </style>

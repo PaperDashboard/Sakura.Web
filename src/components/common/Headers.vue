@@ -12,8 +12,10 @@
                     <i class="el-icon-arrow-down el-icon--right"></i>
                 </span>
                 <el-dropdown-menu slot="dropdown">
-                    <el-dropdown-item>用户面板</el-dropdown-item>
-                    <el-dropdown-item divided>登出</el-dropdown-item>
+                    <el-dropdown-item>{{ $t('static.dashboard') }}</el-dropdown-item>
+                    <el-dropdown-item divided>
+                        <span @click="promiseLogout">{{ $t('auth.logout.logout') }}</span>
+                    </el-dropdown-item>
                 </el-dropdown-menu>
                 </el-dropdown>
             </el-menu-item>
@@ -35,11 +37,25 @@
 </template>
 
 <script>
-    import { mapGetters } from 'vuex';
+    import { mapGetters, mapActions } from 'vuex';
+    import { Loading } from 'element-ui';
 
     export default {
+
         computed: {
             ...mapGetters('auth', ['profile']),
+        },
+        methods: {
+            ...mapActions('auth', ['logout']),
+            promiseLogout() {
+                const loading = Loading.service({ fullscreen: true });
+
+                this.logout().then(() => {
+                    loading.close();
+                    this.logOuting = false;
+                    this.$router.push({ name: 'Index' });
+                });
+            },
         },
     };
 </script>

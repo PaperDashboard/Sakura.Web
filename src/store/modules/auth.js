@@ -1,5 +1,5 @@
 import Cookies from 'js-cookie';
-import { login as l, getInfo } from '@/api/auth';
+import { login as l, getInfo, logout as lo } from '@/api/auth';
 import { SAKURA_TOKEN } from '@/utils/user';
 
 export default {
@@ -19,6 +19,12 @@ export default {
             const userInfo = await getInfo();
             commit('setProfile', userInfo.data);
         },
+        async logout({ commit }) {
+            await lo();
+            commit('setToken', undefined);
+            commit('setProfile', {});
+            commit('logout');
+        },
     },
     mutations: {
         setUset(state, playload) {
@@ -32,6 +38,9 @@ export default {
         setProfile(state, profile) {
             // eslint-disable-next-line
             state.profile = profile;
+        },
+        logout() {
+            Cookies.remove(SAKURA_TOKEN);
         },
     },
 };

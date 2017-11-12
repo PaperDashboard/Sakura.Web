@@ -40,3 +40,10 @@ export function codes() {
         method: 'get',
     });
 }
+
+export function logout() {
+    return fetch({
+        url: '/auth/logout',
+        method: 'get',
+    });
+}

@@ -10,8 +10,6 @@ const service = axios.create({
 });
 
 service.interceptors.request.use((config) => {
-    // eslint-disable-next-line
-    console.log(store.getters['auth/token']);
     if (store.getters['auth/token'] !== undefined) {
         /* eslint-disable no-param-reassign */
         config.headers['X-User-Token'] = Cookies.get(SAKURA_TOKEN);

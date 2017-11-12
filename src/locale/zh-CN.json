@@ -23,6 +23,9 @@
             "code": "邀请码",
             "action": "操作",
             "access": "访问"
+        },
+        "logout": {
+            "logout": "登出"
         }
     },
     "static": {
@@ -30,6 +33,7 @@
         "login": "登陆",
         "register": "注册",
         "code": "邀请码",
-        "loading": "加载中"
+        "loading": "加载中",
+        "dashboard": "用户面板"
     }
 }

@@ -23,6 +23,9 @@
             "code": "Invite Code",
             "action": "Action",
             "access": "Access"
+        },
+        "logout": {
+            "logout": "Logout"
         }
     },
     "static": {
@@ -30,6 +33,7 @@
         "login": "Login",
         "register": "Register",
         "code": "Invite Code",
-        "loading": "Loading"
+        "loading": "Loading",
+        "dashboard": "Dashboard"
     }
 }
