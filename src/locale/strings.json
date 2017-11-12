@@ -41,5 +41,17 @@
         "404": {
             "desc": "Pelease check your address, Click this button to return to home page"
         }
+    },
+    "sidebar": {
+        "user": {
+            "name": "My Account",
+            "index": "Index"
+        },
+        "node": {
+            "name": "Node"
+        },
+        "store": {
+            "name": "Store"
+        }
     }
 }

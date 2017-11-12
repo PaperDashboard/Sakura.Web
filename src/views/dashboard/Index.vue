@@ -1,13 +1,22 @@
 <template>
-
+    <div id="wapper">
+        <br>
+        <el-card class="box-card">
+            <div slot="header" class="clearfix">
+                <span>{{ $t('sidebar.user.index') }}</span>
+            </div>
+        </el-card>
+    </div>
 </template>
 
-<script>
-export default {
 
-};
-</script>
+<style scoped>
+    h1 {
+        margin-top: 0px;
+    }
 
-<style>
-
+    #wapper {
+        padding-right: 4vw;
+        padding-top: 4px;
+    }
 </style>
