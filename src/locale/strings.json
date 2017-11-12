@@ -59,7 +59,9 @@
             "title": "Daily Signup",
             "line1": "Traffic will not reset, you can sign to earn traffic",
             "line2": "You can sign pre day",
-            "submit": "Sign"
+            "submit": "Sign",
+            "name": "Signup",
+            "signup-success": "Signup successed, your traffic is updated."
         }
     }
 }

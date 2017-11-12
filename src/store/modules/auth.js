@@ -1,4 +1,5 @@
 import { login as l, getInfo, logout as lo } from '@/api/auth';
+import { signup } from '@/api/dashboard';
 import { destory, set, get as getToken } from '@/storage/user';
 
 export default {
@@ -30,6 +31,14 @@ export default {
             commit('setProfile', {});
             commit('logout');
         },
+        async signup({ commit }) {
+            const resp = await signup();
+            if (resp.data.status === 'success') {
+                commit('addTraffic', resp.data.traffic);
+                return Promise.resolve(resp.data.traffic);
+            }
+            return Promise.reject(resp.data.error);
+        },
     },
     mutations: {
         setUset(state, playload) {
@@ -46,6 +55,10 @@ export default {
         },
         logout() {
             destory();
+        },
+        addTraffic(state, traffic) {
+            // eslint-disable-next-line
+            state.profile.traffic.free += traffic;
         },
     },
 };

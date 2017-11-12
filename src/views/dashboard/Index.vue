@@ -6,14 +6,8 @@
                 <span>{{ $t('sidebar.user.index') }}</span>
             </div>
             <div id="content-index">
-                <div class="card-index">
-                    <div class="text">
-                        <span>{{ $t('dashboard.signup.title') }}</span>
-                        <p>{{ $t('dashboard.signup.line1') }}</p>
-                        <p>{{ $t('dashboard.signup.line2') }}</p>
-                        <el-button>{{ $t('dashboard.signup.submit') }}</el-button>
-                    </div>
-                </div>
+                <signup>
+                </signup>
                 <hr>
                 <div id="graph-index" class="card-index">
                     <div class="text">
@@ -26,11 +20,11 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import Signup from '@/components/dashboard/Signup';
 
 export default {
-    computed: {
-        ...mapGetters('auth', ['profile']),
+    components: {
+        Signup,
     },
 };
 </script>
