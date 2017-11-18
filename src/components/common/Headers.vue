@@ -1,5 +1,10 @@
 <template>
 <el-menu id="header-navbar">
+    <el-menu-item :index="'0'" class="hidden-md-and-up" @click="$emit('toggleNavbar')">
+        <span>
+            <i class="el-icon-menu"></i>
+        </span>
+    </el-menu-item>
     <el-menu-item :index="'1'" class="navbar-item" @click="$router.push('/')">
         {{ $t("static.name") }}
     </el-menu-item>
