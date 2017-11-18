@@ -53,7 +53,6 @@ export default {
     },
     methods: {
         async createCodes() {
-            console.log('create');
             this.profile.inviteNumber = 0;
             try {
                 const ret = await createInviteCode();

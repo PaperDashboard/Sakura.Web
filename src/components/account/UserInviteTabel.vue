@@ -49,7 +49,6 @@ export default {
     watch: {
         // eslint-disable-next-line
         datas: function (newData) {
-            console.log(this);
             this.tableData = this.tableData.concat(newData);
         },
     },

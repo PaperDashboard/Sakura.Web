@@ -53,7 +53,8 @@
             "invite": "邀请"
         },
         "node": {
-            "name": "节点"
+            "name": "节点",
+            "list": "列表"
         },
         "store": {
             "name": "商店"
@@ -86,6 +87,14 @@
             "pre-text": "邀请码请给你认识的人</br>如果你邀请的人违反了使用协议 你可能会面临封禁",
             "create-success": "创建成功",
             "create": "创建邀请码"
+        }
+    },
+    "admin": {
+        "node": {
+            "list": {
+                "title": "节点列表",
+                "create": "创建节点"
+            }
         }
     }
 }

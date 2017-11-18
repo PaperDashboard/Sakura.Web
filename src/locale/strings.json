@@ -52,7 +52,8 @@
             "invite": "Invite"
         },
         "node": {
-            "name": "Node"
+            "name": "Node",
+            "list": "List"
         },
         "store": {
             "name": "Store"
@@ -85,6 +86,14 @@
             "pre-text": "Please Don't give invite code to others that if you don't know it.</br>If you invite somebody abuse our service, you account will been baned",
             "create-success": "Create Progress Success",
             "create": "Click to create invite code"
+        }
+    },
+    "admin": {
+        "node": {
+            "list": {
+                "title": "Node List",
+                "create": "Create Node"
+            }
         }
     }
 }
