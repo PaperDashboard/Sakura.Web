@@ -15,13 +15,13 @@ export default [{
         path: 'register',
         name: 'Register',
         component: Register,
+    }, {
+        path: 'register/:id',
+        name: 'RegisterWithCode',
+        component: Register,
     }],
 }, {
     path: '/auth/code/',
     name: 'Code',
     component: Code,
-}, {
-    path: '/auth/register/:id',
-    name: 'RegisterWithCode',
-    component: Register,
 }];

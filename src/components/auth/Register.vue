@@ -56,6 +56,9 @@
                             title: this.$t('auth.register.register'),
                             message: this.$t('auth.register.register-success'),
                         });
+                        setTimeout(() => {
+                            this.$router.push({ name: 'Login' });
+                        }, 2000);
                     }).catch((err) => {
                         this.loginLoading = false;
                         this.$notify.error({
