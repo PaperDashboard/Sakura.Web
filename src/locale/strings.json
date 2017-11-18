@@ -45,7 +45,8 @@
     "sidebar": {
         "user": {
             "name": "My Account",
-            "index": "Index"
+            "index": "Index",
+            "invite": "Invite"
         },
         "node": {
             "name": "Node"
@@ -71,6 +72,9 @@
                 "unuse-traffic": "Unuse Traffic",
                 "traffic": "Traffic"
             }
+        },
+        "invite": {
+            "title": "Invite Your Friends"
         }
     }
 }

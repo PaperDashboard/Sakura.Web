@@ -46,7 +46,8 @@
     "sidebar": {
         "user": {
             "name": "我的账号",
-            "index": "主页"
+            "index": "主页",
+            "invite": "邀请"
         },
         "node": {
             "name": "节点"
@@ -72,6 +73,9 @@
                 "unuse-traffic": "未使用流量",
                 "traffic": "流量"
             }
+        },
+        "invite": {
+            "title": "邀请你的朋友"
         }
     }
 }

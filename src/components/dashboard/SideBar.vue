@@ -8,9 +8,13 @@
                         <i class="material-icons material-icons-in-menu">account_circle</i>
                         <span @click="$router.push({ name: 'DashboardIndex' })">{{ $t('sidebar.user.name') }}</span>
                     </template>
-                    <el-menu-item index="1-1">
+                    <el-menu-item index="1-1" @click="$router.push({ name: 'DashboardIndex' })">
                         <i class="material-icons material-icons-in-menu">home</i>
                         <span>{{ $t('sidebar.user.index') }}</span>
+                    </el-menu-item>
+                    <el-menu-item index="1-2" @click="$router.push({ name: 'UserInvite' })">
+                        <i class="material-icons material-icons-in-menu">loyalty</i>
+                        <span>{{ $t('sidebar.user.invite') }}</span>
                     </el-menu-item>
                 </el-submenu>
                 <el-menu-item index="2">
@@ -33,5 +37,4 @@
         width: 24px;
         text-align: center;
     }
-
 </style>

@@ -38,11 +38,6 @@ export default {
     h1 {
         margin-top: 0px;
     }
-
-    #wapper {
-        padding-right: 4vw;
-        padding-top: 4px;
-    }
     #content-index > hr {
         color: #e6ebf5;
         background-color: #e6ebf5;
@@ -62,4 +57,8 @@ export default {
     #graph-index {
         padding-top: 0.7em;
     }
+</style>
+
+<style>
+
 </style>
