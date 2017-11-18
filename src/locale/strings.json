@@ -62,6 +62,15 @@
             "submit": "Sign",
             "name": "Signup",
             "signup-success": "Signup successed, your traffic is updated."
+        },
+        "index": {
+            "graph": {
+                "title": "Traffic Graph",
+                "graph-title": "Traffic Usage",
+                "used-traffic": "Used Traffic",
+                "unuse-traffic": "Unuse Traffic",
+                "traffic": "Traffic"
+            }
         }
     }
 }

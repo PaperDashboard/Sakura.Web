@@ -63,6 +63,15 @@
             "submit": "签到",
             "name": "签到",
             "signup-success": "签到成功, 您的流量已更新"
+        },
+        "index": {
+            "graph": {
+                "title": "流量图表",
+                "graph-title": "流量使用情况",
+                "used-traffic": "已用流量",
+                "unuse-traffic": "未使用流量",
+                "traffic": "流量"
+            }
         }
     }
 }

@@ -17,6 +17,7 @@
             ...mapActions('auth', ['login']),
         },
         mounted() {
+
         },
         components: {
             Headers,

@@ -11,7 +11,7 @@
                 <hr>
                 <div id="graph-index" class="card-index">
                     <div class="text">
-                        <span>流量图表</span>
+                        <span>{{ $t('dashboard.index.graph.title') }}</span>
                         <traffic-chart>
                         </traffic-chart>
                     </div>

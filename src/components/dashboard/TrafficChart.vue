@@ -6,6 +6,7 @@
 import { mapGetters } from 'vuex';
 import echarts from 'echarts';
 import 'echarts/theme/macarons';
+import { beaufifyTraffic } from '@/utils/traffic';
 
 export default {
     props: {
@@ -34,28 +35,29 @@ export default {
             this.chart = echarts.init(this.$el, 'macarons');
             this.chart.setOption({
                 title: {
-                    text: '流量使用',
+                    text: this.$t('dashboard.index.graph.graph-title'),
                     left: 'center',
                 },
                 tooltip: {
                     trigger: 'item',
-                    formatter: '{a} <br/>{b} : {c} ({d}%)',
+                    formatter: origin => `${origin.seriesName} <br/> ${origin.name}: ${beaufifyTraffic(origin.value)} (${origin.percent}%)`,
                 },
                 series: [{
-                    name: 'Traffic',
+                    name: this.$t('dashboard.index.graph.traffic'),
                     type: 'pie',
                     radius: '55%',
                     center: ['50%', '50%'],
                     data: [{
                         value: this.profile.traffic.used,
-                        name: '已用流量',
+                        name: this.$t('dashboard.index.graph.used-traffic'),
                     }, {
                         value: this.profile.traffic.free,
-                        name: '未用流量',
+                        name: this.$t('dashboard.index.graph.unuse-traffic'),
                     }],
                     roseType: 'radius',
                     animationEasing: 'cubicInOut',
                     animationDuration: 2600,
+                    stillShowZeroSum: true,
                 }],
             });
         },
