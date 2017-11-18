@@ -36,7 +36,8 @@
         "code": "Invite Code",
         "loading": "Loading",
         "dashboard": "Dashboard",
-        "index": "Index"
+        "index": "Index",
+        "admin-panel": "Adminstor Panel"
     },
     "error": {
         "404": {
@@ -44,6 +45,7 @@
         }
     },
     "sidebar": {
+        "index": "Index",
         "user": {
             "name": "My Account",
             "index": "Index",
@@ -54,6 +56,9 @@
         },
         "store": {
             "name": "Store"
+        },
+        "account": {
+            "name": "Account"
         }
     },
     "dashboard": {

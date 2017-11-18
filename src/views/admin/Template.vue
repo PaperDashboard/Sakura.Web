@@ -27,7 +27,7 @@
 
 <script>
 import Headers from '@/components/common/Headers';
-import SideBar from '@/components/dashboard/SideBar';
+import SideBar from '@/components/admin/SideBar';
 import 'element-ui/lib/theme-chalk/display.css';
 
 export default {

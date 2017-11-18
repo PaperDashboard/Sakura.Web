@@ -36,7 +36,8 @@
         "code": "邀请码",
         "loading": "加载中",
         "dashboard": "用户面板",
-        "index": "主页"
+        "index": "主页",
+        "admin-panel": "管理面板"
     },
     "error": {
         "404": {
@@ -45,6 +46,7 @@
         }
     },
     "sidebar": {
+        "index": "主页",
         "user": {
             "name": "我的账号",
             "index": "主页",
@@ -55,6 +57,9 @@
         },
         "store": {
             "name": "商店"
+        },
+        "account": {
+            "name": "账户"
         }
     },
     "dashboard": {

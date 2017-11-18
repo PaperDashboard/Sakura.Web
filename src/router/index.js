@@ -4,6 +4,7 @@ import Index from '@/views/Index';
 import Page404 from '@/views/404';
 import auth from './auth';
 import dashboard from './dashboard';
+import admin from './admin';
 
 Vue.use(Router);
 
@@ -15,9 +16,7 @@ let PermissionRouter = [{
     path: '/404',
     name: '404Page',
     component: Page404,
-}, ...auth];
-
-PermissionRouter = PermissionRouter.concat(dashboard);
+}, ...auth, ...dashboard, ...admin];
 
 PermissionRouter = PermissionRouter.concat([{
     path: '*',

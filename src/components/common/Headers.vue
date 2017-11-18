@@ -17,10 +17,17 @@
                     <i class="el-icon-arrow-down el-icon--right"></i>
                 </span>
                 <el-dropdown-menu slot="dropdown">
-                    <el-dropdown-item>
+                    <el-dropdown-item class="drop-icons-display">
+                        <i class="material-icons material-icons-in-menu">account_circle</i>
                         <span @click="$router.push({ name: 'DashboardIndex' })">{{ $t('static.dashboard') }}</span>
                     </el-dropdown-item>
-                    <el-dropdown-item divided>
+                    <el-dropdown-item v-if="profile.isAdmin" class="drop-icons-display">
+                        <i class="material-icons material-icons-in-menu">account_balance</i>
+                        <span @click="$router.push({ name: 'AdminIndex' })">{{ $t('static.admin-panel') }}</span>
+                    </el-dropdown-item>
+                    <el-dropdown-item divided />
+                    <el-dropdown-item class="drop-icons-display">
+                        <i class="material-icons material-icons-in-menu">accessible</i>
                         <span @click="promiseLogout">{{ $t('auth.logout.logout') }}</span>
                     </el-dropdown-item>
                 </el-dropdown-menu>
@@ -93,4 +100,16 @@
         display: flex;
     }
 
+    .material-icons-in-menu {
+        margin-right: 5px;
+        font-size: 18px;
+        width: 24px;
+        text-align: center;
+        margin-top: 12px;
+    }
+
+    .drop-icons-display {
+        display: flex;
+        justify-content: begin;
+    }
 </style>
