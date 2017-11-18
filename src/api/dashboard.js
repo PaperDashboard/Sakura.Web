@@ -8,3 +8,19 @@ export function signup() {
         method: 'get',
     });
 }
+
+export function getInviteCodes() {
+    return fetch({
+        url: '/dashboard/invite',
+        method: 'get',
+    });
+}
+
+
+export function createInviteCode() {
+    return fetch({
+        url: '/dashboard/invite',
+        method: 'post',
+        data: {},
+    });
+}

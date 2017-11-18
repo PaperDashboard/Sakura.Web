@@ -22,7 +22,8 @@
             "date": "Generate Time",
             "code": "Invite Code",
             "action": "Action",
-            "access": "Access"
+            "access": "Access",
+            "send": "Send via mail"
         },
         "logout": {
             "logout": "Logout"
@@ -74,7 +75,11 @@
             }
         },
         "invite": {
-            "title": "Invite Your Friends"
+            "name": "Invite",
+            "title": "Invite Your Friends",
+            "pre-text": "Please Don't give invite code to others that if you don't know it.</br>If you invite somebody abuse our service, you account will been baned",
+            "create-success": "Create Progress Success",
+            "create": "Click to create invite code"
         }
     }
 }

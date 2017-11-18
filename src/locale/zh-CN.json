@@ -22,7 +22,8 @@
             "date": "生成时间",
             "code": "邀请码",
             "action": "操作",
-            "access": "访问"
+            "access": "访问",
+            "send": "通过邮件发送"
         },
         "logout": {
             "logout": "登出"
@@ -75,7 +76,11 @@
             }
         },
         "invite": {
-            "title": "邀请你的朋友"
+            "name": "邀请",
+            "title": "邀请你的朋友",
+            "pre-text": "邀请码请给你认识的人</br>如果你邀请的人违反了使用协议 你可能会面临封禁",
+            "create-success": "创建成功",
+            "create": "创建邀请码"
         }
     }
 }
