@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import { isLogin } from '@/utils/user';
 import Index from '@/views/Index';
 import Page404 from '@/views/404';
 import auth from './auth';
@@ -18,9 +17,7 @@ let PermissionRouter = [{
     component: Page404,
 }, ...auth];
 
-if (isLogin()) {
-    PermissionRouter = PermissionRouter.concat(dashboard);
-}
+PermissionRouter = PermissionRouter.concat(dashboard);
 
 PermissionRouter = PermissionRouter.concat([{
     path: '*',
