@@ -1,6 +1,7 @@
 import Template from '@/views/admin/Template';
 import Index from '@/views/admin/Index';
 import List from '@/views/admin/node/List';
+import Modify from '@/views/admin/node/Modify';
 
 export default [{
     path: '/admin',
@@ -19,5 +20,9 @@ export default [{
         path: 'nodes/list',
         name: 'AdminNodeLIst',
         component: List,
+    }, {
+        path: 'node/create',
+        name: 'CreateNode',
+        component: Modify,
     }],
 }];

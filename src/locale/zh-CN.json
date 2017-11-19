@@ -37,7 +37,8 @@
         "loading": "加载中",
         "dashboard": "用户面板",
         "index": "主页",
-        "admin-panel": "管理面板"
+        "admin-panel": "管理面板",
+        "cancel": "取消"
     },
     "error": {
         "404": {
@@ -99,6 +100,25 @@
                 "node-type": "节点类型",
                 "node-opt": "操作",
                 "node-used": "节点已用流量"
+            },
+            "create": {
+                "title": "创建一个新节点",
+                "submit": "提交节点",
+                "form": {
+                    "name": "节点名称",
+                    "address": "节点地址",
+                    "type": "节点类型",
+                    "enable": "是否启用",
+                    "rate": "流量比例",
+                    "level": "节点等级",
+                    "port": "链接端口",
+                    "placeholder-name": "你希望节点叫什么?",
+                    "placeholder-address": "你希望用户用什么地址进行链接?",
+                    "placeholder-type": "你希望是什么类型?",
+                    "placeholder-rate": "你需要1字节当作多少字节来计算?",
+                    "placeholder-level": "你希望什么等级的用户可以访问?",
+                    "placeholder-port": "用户应该使用什么端口进行链接?"
+                }
             }
         }
     }

@@ -4,7 +4,7 @@
         <el-card>
             <div slot="header" class="clearfix">
                 <span>{{ $t('admin.node.list.title') }}</span>
-                <el-button style="float: right; padding: 3px 0" type="text">
+                <el-button @click="$router.push({ name: 'CreateNode' })" style="float: right; padding: 3px 0" type="text">
                     {{ $t('admin.node.list.create') }}
                 </el-button>
             </div>

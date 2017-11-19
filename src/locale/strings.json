@@ -37,7 +37,8 @@
         "loading": "Loading",
         "dashboard": "Dashboard",
         "index": "Index",
-        "admin-panel": "Adminstor Panel"
+        "admin-panel": "Adminstor Panel",
+        "cancel": "Cancel"
     },
     "error": {
         "404": {
@@ -98,6 +99,25 @@
                 "node-type": "Node Type",
                 "node-opt": "Operation",
                 "node-used": "Node Used Traffic"
+            },
+            "create": {
+                "title": "Create a new Node",
+                "submit": "Submit Node",
+                "form": {
+                    "name": "Node Name",
+                    "address": "Node Address",
+                    "type": "Node Type",
+                    "enable": "Is Enable?",
+                    "rate": "Traffic Rate",
+                    "level": "Node Level",
+                    "port": "Link Port",
+                    "placeholder-name": "What's this node's name?",
+                    "placeholder-address": "What's address that you want user use?",
+                    "placeholder-type": "What's type of node do you want?",
+                    "placeholder-rate": "How much bit do you want to recore when user use 1bit?",
+                    "placeholder-level": "User need hwo high level to access this node?",
+                    "placeholder-port": "User should use what port to link in?"
+                }
             }
         }
     }
