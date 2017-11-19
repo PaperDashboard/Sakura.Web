@@ -3,7 +3,7 @@
         <el-col>
             <h5></h5>
             <el-menu>
-                <el-menu-item index="1">
+                <el-menu-item index="1" @click="$router.push({ name: 'AdminIndex' })">
                     <i class="material-icons material-icons-in-menu">assessment</i>
                     <span slot="title">{{ $t('sidebar.index') }}</span>
                 </el-menu-item>

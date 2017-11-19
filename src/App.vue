@@ -27,5 +27,6 @@ export default {
         margin-top: 0px;
         margin-right: 0px;
         margin-bottom: 0px;
+        font-family: 'Roboto'
     }
 </style>

@@ -3,6 +3,9 @@ const nameRegex = /\.\/(\S+)\.json/i;
 
 function getLocale(validLocales) {
     const language = navigator.language;
+
+    console.log(navigator.language);
+
     if (!language) return defaultLocale;
     if (language.length !== 2) return validLocales.includes(language) ? language : defaultLocale;
     if (validLocales.includes(`${language}-${language.toUpperCase()}`)) return `${language}-${language.toUpperCase()}`;
