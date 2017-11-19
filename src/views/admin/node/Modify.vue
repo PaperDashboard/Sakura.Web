@@ -5,7 +5,7 @@
             <div slot="header" class="clearfix">
                 <span>{{ $t('admin.node.create.title') }}</span>
             </div>
-            <el-form label-width="150px" :rules="rules" status-icon ref="form" :model="form">
+            <el-form label-width="80px" :rules="rules" status-icon ref="form" :model="form">
                 <el-form-item :label="$t('admin.node.create.form.name')" prop="name">
                     <el-input
                         :placeholder="$t('admin.node.create.form.placeholder-name')"
@@ -59,6 +59,10 @@
                     </el-form-item>
                 </transition>
 
+                <el-form-item :label="$t('admin.node.create.form.detail')" prop="detail">
+                    <el-input type="textarea" v-model="form.detail"></el-input>
+                </el-form-item>
+
                 <el-form-item>
                     <el-button @click="onHandOut" type="primary">
                         {{ $t('admin.node.create.submit') }}
@@ -74,12 +78,14 @@
 
 <script>
     import { getNodeTypes, nodeKindToType } from '@/utils/node';
+    import { create } from '@/api/admin/node';
 
     export default {
         data() {
             return {
                 nodeType: getNodeTypes(),
                 type: 'create',
+                loading: false,
                 form: {
                     name: '',
                     address: '',
@@ -88,44 +94,57 @@
                     rate: 1,
                     level: 0,
                     port: 443,
+                    detail: '',
                 },
                 rules: {
                     name: [
-                        { required: true, message: '请输入节点名称' },
+                        { required: true, message: this.$t('admin.node.create.form.error.non-name') },
                     ],
                     address: [
-                        { required: true, message: '请输入节点地址' },
+                        { required: true, message: this.$t('admin.node.create.form.error.non-address') },
                     ],
                     level: [
-                        { required: true, message: '请输入节点等级' },
-                        { type: 'number', message: '节点等级必须为数字值' },
+                        { required: true, message: this.$t('admin.node.create.form.error.non-level') },
+                        { type: 'number', message: this.$t('admin.node.create.form.error.number-level') },
                     ],
                     rate: [
-                        { required: true, message: '请输入流量比例' },
-                        { type: 'number', message: '流量比例必须为数字值' },
+                        { required: true, message: this.$t('admin.node.create.form.error.non-rate') },
+                        { type: 'number', message: this.$t('admin.node.create.form.error.number-rate') },
                     ],
                     port: [
-                        { required: true, message: '请输入链接端口' },
-                        { type: 'number', message: '链接端口必须为数字值' },
+                        { required: true, message: this.$t('admin.node.create.form.error.non-port') },
+                        { type: 'number', message: this.$t('admin.node.create.form.error.number-port') },
                     ],
                 },
             };
         },
         methods: {
             nodeKindToType,
-            onHandOut() {
+            async onHandOut() {
                 // Fixme: Debug
-                this.$refs.form.validate((valid) => {
-                    if (valid) {
+                const status = await this.$refs.form.validate();
+                if (status) {
+                    this.loading = true;
+                    try {
+                        await create(this.form);
                         this.$notify.info({
-                            message: this.form,
+                            title: this.$t('admin.node.create.message-title'),
+                            message: this.$t('admin.node.create.success'),
                         });
-                    } else {
+                        setTimeout(() => {
+                            this.$router.push({ name: 'AdminNodeList' });
+                        }, 2000);
+                    } catch (err) {
                         this.$notify.error({
-                            message: this.form,
+                            title: this.$t('admin.node.create.message-title'),
+                            message: err.response && err.response.data.error
+                                ? err.response.data.error
+                                : err.message,
                         });
+                    } finally {
+                        this.loading = false;
                     }
-                });
+                }
             },
         },
     };

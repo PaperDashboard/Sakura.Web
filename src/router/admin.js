@@ -17,8 +17,8 @@ export default [{
         },
         component: Index,
     }, {
-        path: 'nodes/list',
-        name: 'AdminNodeLIst',
+        path: 'nodes',
+        name: 'AdminNodeList',
         component: List,
     }, {
         path: 'node/create',

@@ -8,3 +8,12 @@ export function getNodeList() {
         method: 'get',
     });
 }
+
+
+export function create(payload) {
+    return fetch({
+        url: '/admin/node/create',
+        method: 'post',
+        data: payload,
+    });
+}

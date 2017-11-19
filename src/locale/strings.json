@@ -117,12 +117,23 @@
                     "rate": "Traffic Rate",
                     "level": "Node Level",
                     "port": "Link Port",
+                    "detail": "Node Detail",
                     "placeholder-name": "What's this node's name?",
                     "placeholder-address": "What's address that you want user use?",
                     "placeholder-type": "What's type of node do you want?",
                     "placeholder-rate": "How much bit do you want to recore when user use 1bit?",
                     "placeholder-level": "User need hwo high level to access this node?",
-                    "placeholder-port": "User should use what port to link in?"
+                    "placeholder-port": "User should use what port to link in?",
+                    "error": {
+                        "non-name": "Please input node name",
+                        "non-address": "Please input node address",
+                        "non-level": "Please input node level",
+                        "non-rate": "Please input node rate",
+                        "non-port": "Please input node port",
+                        "number-rate": "Node rate should be number",
+                        "number-level": "Node level should be number",
+                        "number-port": "Node port should be number"
+                    }
                 }
             }
         }
