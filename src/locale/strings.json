@@ -92,7 +92,12 @@
         "node": {
             "list": {
                 "title": "Node List",
-                "create": "Create Node"
+                "create": "Create Node",
+                "node-id": "Node ID",
+                "node-name": "Node Name",
+                "node-type": "Node Type",
+                "node-opt": "Operation",
+                "node-used": "Node Used Traffic"
             }
         }
     }

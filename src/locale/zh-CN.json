@@ -93,7 +93,12 @@
         "node": {
             "list": {
                 "title": "节点列表",
-                "create": "创建节点"
+                "create": "创建节点",
+                "node-id": "节点ID",
+                "node-name": "节点名称",
+                "node-type": "节点类型",
+                "node-opt": "操作",
+                "node-used": "节点已用流量"
             }
         }
     }
