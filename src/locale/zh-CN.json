@@ -27,6 +27,12 @@
         },
         "logout": {
             "logout": "登出"
+        },
+        "error": {
+            "non-input-email": "请输入你的邮箱地址",
+            "non-input-password": "请输入你的密码",
+            "non-input-username": "请输入你的用户名",
+            "non-input-invite": "请输入你的邀请码"
         }
     },
     "static": {

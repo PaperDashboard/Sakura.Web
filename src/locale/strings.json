@@ -27,6 +27,12 @@
         },
         "logout": {
             "logout": "Logout"
+        },
+        "error": {
+            "non-input-email": "Please input your email address",
+            "non-input-password": "Please input your password",
+            "non-input-username": "Plase input your username",
+            "non-input-invite": "Please input your invite code"
         }
     },
     "static": {

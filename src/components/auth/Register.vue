@@ -2,24 +2,24 @@
     <div id="reg-model">
         <el-card class="box-card">
             <h3 class="center">{{ $t("auth.register.title") }}</h3>
-            <el-form autoComplete="on" ref="regForm" label-position="left" label-width="0px" class="card-box">
+            <el-form autoComplete="on" ref="regForm" label-position="left" label-width="0px" class="card-box" :rules="rules" status-icon :model="form">
                 <el-form-item prop="username">
-                    <el-input :placeholder="$t('auth.register.input-username')" v-model="username">
+                    <el-input :placeholder="$t('auth.register.input-username')" v-model="form.username">
                         <i slot="prefix" class="mdl-icon-input material-icons el-input__icon">account_circle</i>
                     </el-input>
                 </el-form-item>
-                <el-form-item prop="username">
-                    <el-input :placeholder="$t('auth.register.input-email')" v-model="email">
+                <el-form-item prop="email">
+                    <el-input :placeholder="$t('auth.register.input-email')" v-model="form.email">
                         <i slot="prefix" class="mdl-icon-input material-icons el-input__icon">mail</i>
                     </el-input>
                 </el-form-item>
-                <el-form-item prop="username">
-                    <el-input :placeholder="$t('auth.register.input-password')" type="password" v-model="password">
+                <el-form-item prop="password">
+                    <el-input :placeholder="$t('auth.register.input-password')" type="password" v-model="form.password">
                         <i slot="prefix" class="mdl-icon-input material-icons el-input__icon">lock</i>
                     </el-input>
                 </el-form-item>
-                <el-form-item prop="username">
-                    <el-input :placeholder="$t('auth.register.input-invite')" v-model="inviteCode">
+                <el-form-item prop="inviteCode">
+                    <el-input :placeholder="$t('auth.register.input-invite')" v-model="form.inviteCode">
                         <i slot="prefix" class="mdl-icon-input material-icons el-input__icon">record_voice_over</i>
                     </el-input>
                 </el-form-item>
@@ -39,35 +39,55 @@
     export default {
         data() {
             return {
-                username: '',
-                password: '',
-                email: '',
-                inviteCode: this.$route.params.id,
+                form: {
+                    username: '',
+                    password: '',
+                    email: '',
+                    inviteCode: this.$route.params.id,
+                },
+                rules: {
+                    username: [
+                        { required: true, message: this.$t('auth.error.non-input-username') },
+                    ],
+                    email: [
+                        { required: true, message: this.$t('auth.error.non-input-email') },
+                    ],
+                    password: [
+                        { required: true, message: this.$t('auth.error.non-input-password') },
+                    ],
+                    inviteCode: [
+                        { required: true, message: this.$t('auth.error.non-input-invite') },
+                    ],
+                },
                 loading: false,
             };
         },
         methods: {
             registerTo() {
-                this.loginLoading = true;
-                R(this.email, this.password, this.username, this.inviteCode)
-                    .then(() => {
-                        this.loginLoading = false;
-                        this.$notify.info({
-                            title: this.$t('auth.register.register'),
-                            message: this.$t('auth.register.register-success'),
-                        });
-                        setTimeout(() => {
-                            this.$router.push({ name: 'Login' });
-                        }, 2000);
-                    }).catch((err) => {
-                        this.loginLoading = false;
-                        this.$notify.error({
-                            title: this.$t('auth.register.register'),
-                            message: err.response && err.response.data.error
-                                ? err.response.data.error
-                                : err.message,
-                        });
-                    });
+                this.$refs.regForm.validate((valid) => {
+                    if (valid) {
+                        this.loginLoading = true;
+                        R(this.form.email, this.form.password, this.form.username, this.form.inviteCode)
+                            .then(() => {
+                                this.loginLoading = false;
+                                this.$notify.info({
+                                    title: this.$t('auth.register.register'),
+                                    message: this.$t('auth.register.register-success'),
+                                });
+                                setTimeout(() => {
+                                    this.$router.push({ name: 'Login' });
+                                }, 2000);
+                            }).catch((err) => {
+                                this.loginLoading = false;
+                                this.$notify.error({
+                                    title: this.$t('auth.register.register'),
+                                    message: err.response && err.response.data.error
+                                        ? err.response.data.error
+                                        : err.message,
+                                });
+                            });
+                    }
+                });
             },
         },
     };
