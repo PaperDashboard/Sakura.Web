@@ -73,7 +73,7 @@ export default {
         left: 0px;
         top:0px;
         background-color: #fff;
-        z-index: 2;
+        z-index: 6;
         /* display: none; */
     }
     .shadow-screen {
@@ -84,7 +84,7 @@ export default {
         left: 0;
         top: 0;
         overflow: hidden;
-        z-index: 1;
+        z-index: 5;
     }
     .fade-enter-active, .fade-leave-active {
         transition: opacity .5s
