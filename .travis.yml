@@ -12,7 +12,7 @@ cache:
 
 after_success:
   - sed -i 's#@staticPath@#Sakura.Web/#' config/index.js
-  - sed -i 's#http://127.0.0.1:3000/#https://sakura-backend.herokuapp.com/#' config/dev.env.js
+  - sed -i 's#http://127.0.0.1:3000/#https://sakura-backend.herokuapp.com/#' config/prod.env.js
   - npm run build
   - cd dist
 
