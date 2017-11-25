@@ -11,7 +11,7 @@ cache:
     - "node_modules"
 
 after_success:
-  - sed -i "s#assetsPublicPath: '/',#assetsPublicPath: '/Sakura.Web/',#" config/index.js
+  - sed -i 's#assetsPublicPath\: ''/'',#assetsPublicPath\: ''/Sakura.Web/'',#' config/index.js
   - npm run build
   - cd dist
 
