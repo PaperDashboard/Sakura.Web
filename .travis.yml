@@ -1,31 +1,26 @@
-{
-    "language": "node_js",
-    "node_js": [
-        "node",
-        "lts/*"
-    ],
-    "install": [
-        "yarn"
-    ],
-    "cache": {
-        "directories": [
-            "node_modules"
-        ]
-    },
-    "after_success": [
-        "sed -i 's#assetsPublicPath\: '/',#assetsPublicPath\: '/Sakura.Web/',#' config/index.js",
-        "npm run build",
-        "cd dist"
-    ],
-    "deploy": {
-        "provider": "pages",
-        "skip_cleanup": true,
-        "github_token": "$GITHUB_TOKEN",
-        "target_branch": "gh-pages",
-        "email": "jiduye@gmail.com",
-        "name": "Travis Automatically Bot"
-        "on": {
-            "branch": "master"
-        }
-    }
-}
+language: node_js
+node_js:
+  - "node"
+  - "lts/*"
+
+install:
+    - yarn
+
+cache:
+  directories:
+    - "node_modules"
+
+after_success:
+  - sed -i 's#@staticPath@#Sakura.Web/#' config/index.js
+  - npm run build
+  - cd dist
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  target_branch: gh-pages
+  email: jiduye@gmail.com
+  name: Travis Automatically Bot
+  on:
+    branch: master
