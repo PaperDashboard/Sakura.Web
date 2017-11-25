@@ -1,7 +1,10 @@
-# sakura-web
+# Sakura.Web
 
-> Frontend project for sakura via Vue.js
-
+> Sakura Panel's web user inferace, writen by vue.js
+## Project Status
+![https://travis-ci.org/PaperDashboard/Sakura.Web](https://api.travis-ci.org/PaperDashboard/Sakura.Web.svg?branch=master)
+![https://github.com/PaperDashboard/Sakura.Web/blob/master/LICENSE](https://img.shields.io/badge/license-GPL3-blue.svg)
+![https://paperdashboard.github.io/Sakura.Web/](https://img.shields.io/badge/demo-GitHub%20Page-lightgrey.svg)
 ## Build Setup
 
 ``` bash
