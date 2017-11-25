@@ -67,7 +67,7 @@
                     <el-button @click="onHandOut" type="primary">
                         {{ $t('admin.node.create.submit') }}
                     </el-button>
-                    <el-button @click="$router.push({ name: 'AdminNodeLIst' })">
+                    <el-button @click="$router.push({ name: 'AdminNodeList' })">
                         {{ $t('static.cancel') }}
                     </el-button>
                 </el-form-item>
