@@ -110,6 +110,7 @@
             "create": {
                 "title": "Create a new Node",
                 "submit": "Submit Node",
+                "destory": "Destory this node",
                 "form": {
                     "name": "Node Name",
                     "address": "Node Address",
@@ -140,6 +141,10 @@
                         "non-number": "You was input a none number value"
                     }
                 }
+            },
+            "delete": {
+                "message-title": "Delete Node",
+                "success": "Success deleted node"
             }
         }
     }

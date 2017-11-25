@@ -17,3 +17,18 @@ export function create(payload) {
         data: payload,
     });
 }
+
+export function getInfo(nodeId) {
+    return fetch({
+        url: `/admin/node/info/${nodeId}`,
+        method: 'get',
+    });
+}
+
+
+export function destoryNode(nodeId) {
+    return fetch({
+        url: `/admin/node/${nodeId}`,
+        method: 'delete',
+    });
+}

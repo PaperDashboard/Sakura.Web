@@ -96,6 +96,9 @@
                     <el-button @click="onHandOut" type="primary">
                         {{ $t('admin.node.create.submit') }}
                     </el-button>
+                    <el-button v-if="edit_mode" @click="destoryNode" type="danger">
+                        {{ $t('admin.node.create.destory') }}
+                    </el-button>
                     <el-button @click="$router.push({ name: 'AdminNodeList' })">
                         {{ $t('static.cancel') }}
                     </el-button>
@@ -107,7 +110,7 @@
 
 <script>
     import { getNodeTypes, nodeKindToType } from '@/utils/node';
-    import { create } from '@/api/admin/node';
+    import { create, getInfo, destoryNode } from '@/api/admin/node';
 
     export default {
         data() {
@@ -115,6 +118,7 @@
                 nodeType: getNodeTypes(),
                 type: 'create',
                 loading: false,
+                edit_mode: false,
                 form: {
                     name: '',
                     address: '',
@@ -193,6 +197,36 @@
                     this.form.signalPort.splice(index, 1);
                 }
             },
+            async destoryNode() {
+                const nodeId = this.$route.params.id;
+                await destoryNode(nodeId);
+                this.$notify.info({
+                    title: this.$t('admin.node.delete.message-title'),
+                    message: this.$t('admin.node.delete.success'),
+                });
+                this.$router.push({ name: 'AdminNodeList' });
+            },
+        },
+        mounted() {
+            if (this.$route.params.id) {
+                this.loading = true;
+                this.edit_mode = true;
+                const nodeId = this.$route.params.id;
+                getInfo(nodeId).then((resp) => {
+                    const node = resp.data.node;
+                    // eslint-disable-next-line
+                    node.signalPort = node.signalPort.map((item) => {
+                        return {
+                            value: item.value,
+                            key: Date.now(),
+                        };
+                    });
+                    Object.assign(this.form, node);
+                    this.loading = false;
+                }).catch(() => {
+                    this.loading = false;
+                });
+            }
         },
     };
 </script>

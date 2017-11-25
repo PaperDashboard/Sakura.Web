@@ -111,6 +111,7 @@
             "create": {
                 "title": "创建一个新节点",
                 "submit": "提交节点",
+                "destory": "删除这个节点",
                 "form": {
                     "name": "节点名称",
                     "address": "节点地址",
@@ -143,6 +144,10 @@
                 },
                 "message-title": "创建节点",
                 "success": "创建成功"
+            },
+            "delete": {
+                "message-title": "删除节点",
+                "success": "成功的删除了节点"
             }
         }
     }

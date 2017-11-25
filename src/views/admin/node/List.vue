@@ -58,7 +58,7 @@
                     width="70"
                 >
                     <template slot-scope="scope">
-                        <el-button type="text" size="small">编辑</el-button>
+                        <el-button @click="$router.push({ name: 'EditNode', params: { id: scope.row._id } })" type="text" size="small">编辑</el-button>
                     </template>
                 </el-table-column>
             </el-table>

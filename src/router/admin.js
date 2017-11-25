@@ -24,5 +24,9 @@ export default [{
         path: 'node/create',
         name: 'CreateNode',
         component: Modify,
+    }, {
+        path: 'node/edit/:id',
+        name: 'EditNode',
+        component: Modify,
     }],
 }];
