@@ -13,12 +13,13 @@ cache:
 after_success:
   - npm run build
   - cd dist
-  - git add --all .
-  - git commit -m "Automatically build in travis-ci"
 
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
+  target_branch: gh-pages
+  email: jiduye@gmail.com
+  name: Travis Automatically Bot
   on:
     branch: gh-pages
