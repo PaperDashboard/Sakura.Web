@@ -44,7 +44,8 @@
         "dashboard": "Dashboard",
         "index": "Index",
         "admin-panel": "Adminstor Panel",
-        "cancel": "Cancel"
+        "cancel": "Cancel",
+        "delete": "Delete"
     },
     "error": {
         "404": {
@@ -118,6 +119,9 @@
                     "level": "Node Level",
                     "port": "Link Port",
                     "detail": "Node Detail",
+                    "only-signal-port": "Only Signal Port",
+                    "signal-port": "Signal Port",
+                    "create-signal-port": "Create New Port",
                     "placeholder-name": "What's this node's name?",
                     "placeholder-address": "What's address that you want user use?",
                     "placeholder-type": "What's type of node do you want?",
@@ -132,7 +136,8 @@
                         "non-port": "Please input node port",
                         "number-rate": "Node rate should be number",
                         "number-level": "Node level should be number",
-                        "number-port": "Node port should be number"
+                        "number-port": "Node port should be number",
+                        "non-number": "You was input a none number value"
                     }
                 }
             }

@@ -44,7 +44,8 @@
         "dashboard": "用户面板",
         "index": "主页",
         "admin-panel": "管理面板",
-        "cancel": "取消"
+        "cancel": "取消",
+        "delete": "删除"
     },
     "error": {
         "404": {
@@ -119,6 +120,9 @@
                     "level": "节点等级",
                     "port": "链接端口",
                     "detail": "节点详情",
+                    "only-signal-port": "仅单端口多用户",
+                    "signal-port": "单端口多用户",
+                    "create-signal-port": "创建新端口",
                     "placeholder-name": "你希望节点叫什么?",
                     "placeholder-address": "你希望用户用什么地址进行链接?",
                     "placeholder-type": "你希望是什么类型?",
@@ -133,7 +137,8 @@
                         "non-port": "请输入链接端口",
                         "number-rate": "流量比例必须是数字",
                         "number-level": "节点等级必须是数字",
-                        "number-port": "链接端口必须是数字"
+                        "number-port": "链接端口必须是数字",
+                        "non-number": "你输入了一个不是数字的值"
                     }
                 },
                 "message-title": "创建节点",

@@ -5,7 +5,7 @@
             <div slot="header" class="clearfix">
                 <span>{{ $t('admin.node.create.title') }}</span>
             </div>
-            <el-form label-width="80px" :rules="rules" status-icon ref="form" :model="form">
+            <el-form label-width="120px" :rules="rules" status-icon ref="form" :model="form">
                 <el-form-item :label="$t('admin.node.create.form.name')" prop="name">
                     <el-input
                         :placeholder="$t('admin.node.create.form.placeholder-name')"
@@ -35,6 +35,10 @@
                     <el-switch v-model="form.enable"></el-switch>
                 </el-form-item>
 
+                <el-form-item :label="$t('admin.node.create.form.only-signal-port')">
+                    <el-switch v-model="form.onlySignalPort"></el-switch>
+                </el-form-item>
+
                 <el-form-item :label="$t('admin.node.create.form.rate')" prop="rate">
                     <el-input
                         :placeholder="$t('admin.node.create.form.placeholder-rate')"
@@ -58,6 +62,31 @@
                         </el-input>
                     </el-form-item>
                 </transition>
+
+                <transition-group v-if="form.kind === 0" name="fade">
+                    <el-form-item
+                        v-for="(port, index) in form.signalPort"
+                        :key="port.key"
+                        :prop="'signalPort.' + index + '.value'"
+                        :label="$t('admin.node.create.form.signal-port')"
+                        :rules="[
+                            { type: 'integer', message: $t('admin.node.create.form.error.non-number') },
+                            // { min: 0, max: 65565, message: '端口大小错误', trigger: 'blur,change' }
+                        ]">
+                            <div class="fluxItem">
+                                <el-input class="portItem" v-model.number="port.value"></el-input>
+                                <el-button @click.prevent="removePort(port)">{{ $t('static.delete') }}</el-button>
+                            </div>
+                        </el-form-item>
+                    </el-form-item>
+                </transition-group>
+
+                <transition v-if="form.kind === 0" name="fade">
+                    <el-form-item>
+                        <el-button @click="addPort">{{ $t("admin.node.create.form.create-signal-port") }}</el-button>
+                    </el-form-item>
+                </transition>
+
 
                 <el-form-item :label="$t('admin.node.create.form.detail')" prop="detail">
                     <el-input type="textarea" v-model="form.detail"></el-input>
@@ -95,6 +124,11 @@
                     level: 0,
                     port: 443,
                     detail: '',
+                    onlySignalPort: false,
+                    signalPort: [{
+                        value: '',
+                        key: Date.now(),
+                    }],
                 },
                 rules: {
                     name: [
@@ -121,12 +155,13 @@
         methods: {
             nodeKindToType,
             async onHandOut() {
-                // Fixme: Debug
                 const status = await this.$refs.form.validate();
                 if (status) {
                     this.loading = true;
+                    const postData = Object.assign({}, this.form);
+                    postData.signalPort = postData.signalPort.map(item => item.value);
                     try {
-                        await create(this.form);
+                        await create(postData);
                         this.$notify.info({
                             title: this.$t('admin.node.create.message-title'),
                             message: this.$t('admin.node.create.success'),
@@ -146,6 +181,18 @@
                     }
                 }
             },
+            addPort() {
+                this.form.signalPort.push({
+                    value: '',
+                    key: Date.now(),
+                });
+            },
+            removePort(port) {
+                const index = this.form.signalPort.indexOf(port);
+                if (index !== -1) {
+                    this.form.signalPort.splice(index, 1);
+                }
+            },
         },
     };
 </script>
@@ -159,4 +206,13 @@
     .fade-enter, .fade-leave-to /* .fade-leave-active in below version 2.1.8 */ {
         opacity: 0
     }
+
+    .portItem {
+        margin-right: 24px;
+    }
+
+    .fluxItem {
+        display: flex;
+    }
+
 </style>
