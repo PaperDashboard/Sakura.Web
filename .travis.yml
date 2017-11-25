@@ -22,4 +22,4 @@ deploy:
   email: jiduye@gmail.com
   name: Travis Automatically Bot
   on:
-    branch: gh-pages
+    branch: master
