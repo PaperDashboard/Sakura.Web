@@ -28,7 +28,7 @@
 <style scoped>
     #backend-image {
         min-height: calc(100vh - 56px);
-        background-image: url("http://area.sinaapp.com/bingImg");
+        background-image: url("//area.sinaapp.com/bingImg");
         background-size: cover;
     }
 </style>
