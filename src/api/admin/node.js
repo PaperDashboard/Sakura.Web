@@ -26,9 +26,17 @@ export function getInfo(nodeId) {
 }
 
 
-export function destoryNode(nodeId) {
+export function destory(nodeId) {
     return fetch({
         url: `/admin/node/${nodeId}`,
         method: 'delete',
+    });
+}
+
+export function update(nodeId, nodeInfo) {
+    return fetch({
+        url: `/admin/node/${nodeId}`,
+        method: 'put',
+        data: nodeInfo,
     });
 }

@@ -145,6 +145,10 @@
             "delete": {
                 "message-title": "Delete Node",
                 "success": "Success deleted node"
+            },
+            "edit": {
+                "message-title": "Edit Node",
+                "success": "Node changed successful"
             }
         }
     }

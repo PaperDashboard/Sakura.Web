@@ -96,7 +96,7 @@
                     <el-button @click="onHandOut" type="primary">
                         {{ $t('admin.node.create.submit') }}
                     </el-button>
-                    <el-button v-if="edit_mode" @click="destoryNode" type="danger">
+                    <el-button v-if="edit_mode" @click="destory" type="danger">
                         {{ $t('admin.node.create.destory') }}
                     </el-button>
                     <el-button @click="$router.push({ name: 'AdminNodeList' })">
@@ -110,7 +110,7 @@
 
 <script>
     import { getNodeTypes, nodeKindToType } from '@/utils/node';
-    import { create, getInfo, destoryNode } from '@/api/admin/node';
+    import { create, getInfo, destory, update } from '@/api/admin/node';
 
     export default {
         data() {
@@ -162,20 +162,27 @@
                 const status = await this.$refs.form.validate();
                 if (status) {
                     this.loading = true;
+                    // Deep Copy node infomation, to bypass the vaule watch
                     const postData = Object.assign({}, this.form);
                     postData.signalPort = postData.signalPort.map(item => item.value);
+                    const localeBase = this.edit_mode ? 'admin.node.edit' : 'admin.node.create';
                     try {
-                        await create(postData);
+                        if (this.edit_mode) {
+                            const nodeId = this.$route.params.id;
+                            await update(nodeId, postData);
+                        } else {
+                            await create(postData);
+                        }
                         this.$notify.info({
-                            title: this.$t('admin.node.create.message-title'),
-                            message: this.$t('admin.node.create.success'),
+                            title: this.$t(`${localeBase}.message-title`),
+                            message: this.$t(`${localeBase}.success`),
                         });
                         setTimeout(() => {
                             this.$router.push({ name: 'AdminNodeList' });
                         }, 2000);
                     } catch (err) {
                         this.$notify.error({
-                            title: this.$t('admin.node.create.message-title'),
+                            title: this.$t(`${localeBase}.message-title`),
                             message: err.response && err.response.data.error
                                 ? err.response.data.error
                                 : err.message,
@@ -197,9 +204,9 @@
                     this.form.signalPort.splice(index, 1);
                 }
             },
-            async destoryNode() {
+            async destory() {
                 const nodeId = this.$route.params.id;
-                await destoryNode(nodeId);
+                await destory(nodeId);
                 this.$notify.info({
                     title: this.$t('admin.node.delete.message-title'),
                     message: this.$t('admin.node.delete.success'),
@@ -217,7 +224,7 @@
                     // eslint-disable-next-line
                     node.signalPort = node.signalPort.map((item) => {
                         return {
-                            value: item.value,
+                            value: item,
                             key: Date.now(),
                         };
                     });

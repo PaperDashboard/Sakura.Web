@@ -148,6 +148,10 @@
             "delete": {
                 "message-title": "删除节点",
                 "success": "成功的删除了节点"
+            },
+            "edit": {
+                "message-title": "编辑节点",
+                "success": "节点修改成功"
             }
         }
     }
