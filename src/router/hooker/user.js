@@ -6,6 +6,7 @@ import 'nprogress/nprogress.css';
 
 router.beforeEach((to, from, next) => {
     NProgress.start();
+    store.dispatch('loadstate/setLoaded', false);
     store.dispatch('auth/getInfo').then(() => {
         NProgress.done();
         next();
@@ -30,5 +31,6 @@ router.beforeEach((to, from, next) => {
 });
 
 router.afterEach(() => {
+    store.dispatch('loadstate/setLoaded', true);
     NProgress.done();
 });

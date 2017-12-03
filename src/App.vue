@@ -12,11 +12,26 @@
 
 <script>
 import Footers from 'components/common/Footers';
+import { Loading } from 'element-ui';
+import { mapGetters } from 'vuex';
+
+const loading = Loading.service({ fullscreen: true });
 
 export default {
     name: 'app',
     components: {
         Footers,
+    },
+    computed: {
+        ...mapGetters('loadstate', ['loaded']),
+    },
+    watch: {
+        // eslint-disable-next-line
+        loaded: function (val) {
+            if (val) {
+                loading.close();
+            }
+        },
     },
 };
 </script>
