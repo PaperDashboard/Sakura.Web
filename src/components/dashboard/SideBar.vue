@@ -17,10 +17,16 @@
                         <span>{{ $t('sidebar.user.invite') }}</span>
                     </el-menu-item>
                 </el-submenu>
-                <el-menu-item index="2">
-                    <i class="material-icons material-icons-in-menu">storage</i>
-                    <span slot="title">{{ $t('sidebar.node.name') }}</span>
-                </el-menu-item>
+                <el-submenu index="2">
+                    <template slot="title">
+                        <i class="material-icons material-icons-in-menu">storage</i>
+                        <span slot="title">{{ $t('sidebar.node.name') }}</span>
+                    </template>
+                    <el-menu-item index="1-1" @click="$router.push({ name: 'UserNodeList' })">
+                        <i class="material-icons material-icons-in-menu">home</i>
+                        <span>{{ $t('sidebar.node.list') }}</span>
+                    </el-menu-item>
+                </el-submenu>
                 <el-menu-item index="3">
                     <i class="material-icons material-icons-in-menu">shopping_cart</i>
                     <span slot="title">{{ $t('sidebar.store.name') }}</span>

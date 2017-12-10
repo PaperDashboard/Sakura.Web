@@ -1,6 +1,7 @@
 import Index from '@/views/dashboard/Index';
 import Invite from '@/views/dashboard/account/Invite';
 import Template from '@/views/dashboard/Template';
+import NodeList from '@/views/dashboard/node/List';
 
 export default [{
     path: '/dashboard',
@@ -22,5 +23,12 @@ export default [{
             needLogin: true,
         },
         component: Invite,
+    }, {
+        path: '/node',
+        name: 'UserNodeList',
+        meta: {
+            needLogin: true,
+        },
+        component: NodeList,
     }],
 }];
