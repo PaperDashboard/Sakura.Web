@@ -151,5 +151,6 @@
                 "success": "Node changed successful"
             }
         }
-    }
+    },
+    "User login failure": "User login failure"
 }
