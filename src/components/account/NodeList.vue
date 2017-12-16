@@ -3,7 +3,8 @@
         <el-collapse accordion>
             <el-collapse-item v-for="(item, index) of nodeList" v-bind:key="index">
                 <template slot="title">
-                    <i class="header-icon el-icon-info"></i> {{ item.name }}
+                    <i class="material-icons node-info-icon header-icon">check</i>
+                    {{ item.name }}
                 </template>
             </el-collapse-item>
         </el-collapse>
@@ -26,3 +27,10 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+    .node-info-icon {
+        vertical-align: middle;
+        padding-right: 8px;
+    }
+</style>
