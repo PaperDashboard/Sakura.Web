@@ -77,7 +77,6 @@
                                 <el-input class="portItem" v-model.number="port.value"></el-input>
                                 <el-button @click.prevent="removePort(port)">{{ $t('static.delete') }}</el-button>
                             </div>
-                        </el-form-item>
                     </el-form-item>
                 </transition-group>
 
