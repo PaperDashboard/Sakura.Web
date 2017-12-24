@@ -95,6 +95,17 @@
             "pre-text": "邀请码请给你认识的人</br>如果你邀请的人违反了使用协议 你可能会面临封禁",
             "create-success": "创建成功",
             "create": "创建邀请码"
+        },
+        "node": {
+            "list": {
+                "name": "节点信息",
+                "address": "节点地址",
+                "rate": "流量比例",
+                "signalPort": "单端口多用户",
+                "phone-import": "手机导入",
+                "node-link": "节点导入链接",
+                "qrcode": "二维码"
+            }
         }
     },
     "admin": {

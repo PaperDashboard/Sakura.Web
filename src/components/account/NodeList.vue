@@ -6,23 +6,25 @@
                     <i class="material-icons node-info-icon header-icon">check</i>
                     {{ item.name }}
                 </template>
-                <h1 style="margin-top: 0px;">节点信息</h1>
-                <p>地址: <el-tag size="small">{{ item.address }}</el-tag></p>
-                <p>流量比例: <el-tag size="small">{{ item.rate }}</el-tag></p>
-                <p>单端口多用户列表:
+                <h1 style="margin-top: 0px;">{{ $t('dashboard.node.list.name') }}</h1>
+                <p>{{ $t('dashboard.node.list.address') }}: <el-tag size="small">{{ item.address }}</el-tag></p>
+                <p>{{ $t('dashboard.node.list.rate') }}: <el-tag size="small">{{ item.rate }}</el-tag></p>
+                <p>{{ $t('dashboard.node.list.signalPort') }}:
                     <el-tag class="port-tag" v-for="(port, index) of item.signalPort" v-bind:key="index">
                         {{ port }}
                     </el-tag>
                 </p>
-                <node-qrcode></node-qrcode>
+                <p>{{ $t('dashboard.node.list.phone-import') }}: <a class="better-a-tag" :href="item.link">{{ $t('dashboard.node.list.node-link') }}</a></p>
+                <p>{{ $t('dashboard.node.list.qrcode') }}</p>
+                <qrcode :value="item.link"/>
             </el-collapse-item>
         </el-collapse>
     </div>
 </template>
 
 <script>
-import NodeQrcode from '@/components/account/NodeQrcode';
 import { getNodeList } from '@/api/user/node';
+import qrcode from '@xkeshi/vue-qrcode';
 
 export default {
     data() {
@@ -36,7 +38,7 @@ export default {
         this.nodeList = data.data.nodes;
     },
     components: {
-        NodeQrcode,
+        qrcode,
     },
 };
 </script>
@@ -48,5 +50,9 @@ export default {
     }
     .port-tag {
         margin-right: 8px;
+    }
+    .better-a-tag {
+        color: #444;
+        text-decoration: none;
     }
 </style>
