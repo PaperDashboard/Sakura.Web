@@ -22,7 +22,7 @@
                         <i class="material-icons material-icons-in-menu">storage</i>
                         <span slot="title">{{ $t('sidebar.node.name') }}</span>
                     </template>
-                    <el-menu-item index="1-1" @click="$router.push({ name: 'UserNodeList' })">
+                    <el-menu-item index="2-1" @click="$router.push({ name: 'UserNodeList' })">
                         <i class="material-icons material-icons-in-menu">home</i>
                         <span>{{ $t('sidebar.node.list') }}</span>
                     </el-menu-item>

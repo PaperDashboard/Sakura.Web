@@ -163,5 +163,9 @@
             }
         }
     },
+    "index": {
+        "welcome": "Welcome to use Sakura",
+        "descp": "An opensource, lightweight VPN system"
+    },
     "User login failure": "User login failure"
 }

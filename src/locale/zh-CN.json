@@ -166,5 +166,9 @@
             }
         }
     },
+    "index": {
+        "welcome": "欢迎使用 Sakura",
+        "descp": "一个开源 轻量的 VPN 系统"
+    },
     "User login failure": "登陆失败"
 }

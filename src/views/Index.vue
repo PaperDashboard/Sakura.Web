@@ -1,7 +1,13 @@
 <template>
     <div id="index">
         <headers></headers>
-        <div id="backend-image"></div>
+        <div id="backend-image">
+
+        </div>
+        <div id="detail">
+            <h1>{{ $t('index.welcome') }}</h1>
+            <p>{{ $t('index.descp') }}</p>
+        </div>
     </div>
 </template>
 
@@ -31,5 +37,19 @@
         background-image: url("//area.sinaapp.com/bingImg");
         background-size: cover;
     }
+
+    #detail {
+        color: lightcyan;
+        text-shadow: 1px 1px 6px black;
+        text-align: center;
+        position: absolute; left: 50%; top: 50%;
+        transform: translate(-50%, -50%);
+        /* line-height: 10px; */
+    }
+    #detail > * {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
 </style>
 
