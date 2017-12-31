@@ -1,5 +1,6 @@
 import Index from '@/views/dashboard/Index';
 import Invite from '@/views/dashboard/account/Invite';
+import Settings from '@/views/dashboard/account/Settings';
 import Template from '@/views/dashboard/Template';
 import NodeList from '@/views/dashboard/node/List';
 
@@ -30,5 +31,12 @@ export default [{
             needLogin: true,
         },
         component: NodeList,
+    }, {
+        path: '/settings',
+        name: 'UserSettings',
+        meta: {
+            needLogin: true,
+        },
+        component: Settings,
     }],
 }];

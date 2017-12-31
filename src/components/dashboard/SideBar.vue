@@ -16,6 +16,10 @@
                         <i class="material-icons material-icons-in-menu">loyalty</i>
                         <span>{{ $t('sidebar.user.invite') }}</span>
                     </el-menu-item>
+                    <el-menu-item index="1-3" @click="$router.push({ name: 'UserSettings' })">
+                        <i class="material-icons material-icons-in-menu">settings</i>
+                        <span>{{ $t('sidebar.user.settings') }}</span>
+                    </el-menu-item>
                 </el-submenu>
                 <el-submenu index="2">
                     <template slot="title">

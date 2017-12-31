@@ -57,7 +57,8 @@
         "user": {
             "name": "My Account",
             "index": "Index",
-            "invite": "Invite"
+            "invite": "Invite",
+            "settings": "Settings"
         },
         "node": {
             "name": "Node",

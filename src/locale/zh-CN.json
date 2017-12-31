@@ -58,7 +58,8 @@
         "user": {
             "name": "我的账号",
             "index": "主页",
-            "invite": "邀请"
+            "invite": "邀请",
+            "settings": "设定"
         },
         "node": {
             "name": "节点",
