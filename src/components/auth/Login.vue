@@ -64,7 +64,7 @@
                                 title: this.$t('auth.login.login'),
                                 message: err.response && err.response.data.error
                                     ? this.$t(err.response.data.error)
-                                    : err.message,
+                                    : this.$t(err.message),
                             });
                         });
                     }

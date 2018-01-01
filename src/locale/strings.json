@@ -168,5 +168,6 @@
         "welcome": "Welcome to use Sakura",
         "descp": "An opensource, lightweight VPN system"
     },
-    "User login failure": "User login failure"
+    "User login failure": "User login failure",
+    "Network Error": "Please check your internet connection"
 }
