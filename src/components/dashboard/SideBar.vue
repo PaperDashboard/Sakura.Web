@@ -6,7 +6,7 @@
                 <el-submenu index="1">
                     <template slot="title">
                         <i class="material-icons material-icons-in-menu">account_circle</i>
-                        <span @click="$router.push({ name: 'DashboardIndex' })">{{ $t('sidebar.user.name') }}</span>
+                        <span>{{ $t('sidebar.user.name') }}</span>
                     </template>
                     <el-menu-item index="1-1" @click="$router.push({ name: 'DashboardIndex' })">
                         <i class="material-icons material-icons-in-menu">home</i>

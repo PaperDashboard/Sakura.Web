@@ -107,6 +107,21 @@
                 "node-link": "节点导入链接",
                 "qrcode": "二维码"
             }
+        },
+        "settings": {
+            "notify": {
+                "success-title": "操作成功",
+                "success-message": "你的设定已被保存",
+                "error-title": "操作失败"
+            },
+            "form": {
+                "title": "用户设定",
+                "link-password": "链接密码",
+                "method": "加密方式",
+                "protocol": "协议",
+                "obfs": "混淆方式",
+                "save": "保存设定"
+            }
         }
     },
     "admin": {

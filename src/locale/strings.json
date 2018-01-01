@@ -106,6 +106,21 @@
                 "node-link": "Node Quick Import Link",
                 "qrcode": "Qrcode"
             }
+        },
+        "settings": {
+            "notify": {
+                "success-title": "Operating success",
+                "success-message": "Your settings is been saved",
+                "error-title": "Operating error"
+            },
+            "form": {
+                "title": "User settings",
+                "link-password": "Link Password",
+                "method": "Method",
+                "protocol": "Protocol",
+                "obfs": "Obfs",
+                "save": "Save Settings"
+            }
         }
     },
     "admin": {
