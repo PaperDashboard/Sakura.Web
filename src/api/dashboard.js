@@ -11,7 +11,7 @@ export function signup() {
 
 export function getInviteCodes() {
     return fetch({
-        url: '/dashboard/invite',
+        url: '/dashboard/account/invite',
         method: 'get',
     });
 }
@@ -19,7 +19,7 @@ export function getInviteCodes() {
 
 export function createInviteCode() {
     return fetch({
-        url: '/dashboard/invite',
+        url: '/dashboard/account/invite',
         method: 'post',
         data: {},
     });
