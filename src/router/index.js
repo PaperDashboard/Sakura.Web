@@ -12,10 +12,16 @@ let PermissionRouter = [{
     path: '/',
     name: 'Index',
     component: Index,
+    meta: {
+        title: 'Sakura - Index',
+    },
 }, {
     path: '/404',
     name: '404Page',
     component: Page404,
+    meta: {
+        title: 'Sakura - 404',
+    },
 }, ...auth, ...dashboard, ...admin];
 
 PermissionRouter = PermissionRouter.concat([{

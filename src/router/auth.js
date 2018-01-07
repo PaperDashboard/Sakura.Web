@@ -11,17 +11,29 @@ export default [{
         path: 'login',
         name: 'Login',
         component: Login,
+        meta: {
+            title: 'Sakura - Login',
+        },
     }, {
         path: 'register',
         name: 'Register',
         component: Register,
+        meta: {
+            title: 'Sakura - Register',
+        },
     }, {
         path: 'register/:id',
         name: 'RegisterWithCode',
         component: Register,
+        meta: {
+            title: 'Sakura - Register',
+        },
     }],
 }, {
     path: '/auth/code/',
     name: 'Code',
     component: Code,
+    meta: {
+        title: 'Sakura - Code',
+    },
 }];
