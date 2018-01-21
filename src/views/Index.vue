@@ -1,6 +1,6 @@
 <template>
     <div id="index">
-        <headers></headers>
+        <headers :disable-export="true"></headers>
         <div id="backend-image">
 
         </div>

@@ -1,6 +1,11 @@
 <template>
 <el-menu id="header-navbar">
-    <el-menu-item :index="'0'" class="hidden-md-and-up" @click="$emit('toggleNavbar')">
+    <el-menu-item
+        :index="'0'"
+        class="hidden-md-and-up"
+        @click="$emit('toggleNavbar')"
+        v-if="!disableExport">
+
         <span>
             <i class="el-icon-menu"></i>
         </span>
@@ -55,7 +60,12 @@
     import { Loading } from 'element-ui';
 
     export default {
-
+        props: {
+            disableExport: {
+                type: Boolean,
+                default: true,
+            },
+        },
         computed: {
             ...mapGetters('auth', ['profile']),
         },

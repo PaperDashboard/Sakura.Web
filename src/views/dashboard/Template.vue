@@ -1,6 +1,6 @@
 <template>
     <div>
-        <headers @toggleNavbar="showNav"></headers>
+        <headers :disable-export="false" @toggleNavbar="showNav"></headers>
         <div id="wapper" class="dashboard-wapper">
             <el-row type="flex" class="row-bg" justify="space-between">
                 <el-col class="hidden-sm-and-down" :span="6">
