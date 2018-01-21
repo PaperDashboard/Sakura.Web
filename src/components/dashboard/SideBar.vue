@@ -35,6 +35,16 @@
                     <i class="material-icons material-icons-in-menu">shopping_cart</i>
                     <span slot="title">{{ $t('sidebar.store.name') }}</span>
                 </el-menu-item>
+                <el-submenu index="4">
+                    <template slot="title">
+                        <i class="material-icons material-icons-in-menu">chat</i>
+                        <span slot="title">{{ $t('sidebar.ticket.name') }}</span>
+                    </template>
+                    <el-menu-item index="4-1" @click="$router.push({ name: 'UserTicketCreate' })">
+                        <i class="material-icons material-icons-in-menu">add_circle</i>
+                        <span>{{ $t('sidebar.ticket.create') }}</span>
+                    </el-menu-item>
+                </el-submenu>
             </el-menu>
         </el-col>
     </div>

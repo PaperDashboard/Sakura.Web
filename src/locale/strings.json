@@ -69,6 +69,10 @@
         },
         "account": {
             "name": "Account"
+        },
+        "ticket": {
+            "name": "Ticket",
+            "create": "Create Ticket"
         }
     },
     "dashboard": {

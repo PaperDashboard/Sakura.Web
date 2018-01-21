@@ -70,6 +70,10 @@
         },
         "account": {
             "name": "账户"
+        },
+        "ticket": {
+            "name": "工单",
+            "create": "创建工单"
         }
     },
     "dashboard": {
